@@ -10,26 +10,28 @@ function daysInBudget(fixedBudget, hourlyRate) {
 
 function priceWithMonthlyDiscount(hourlyRate, daysInProject, monthlyDiscountRate) {
     let dailyRate = dayRate(hourlyRate); 
-    console.log("dailyRate: " + dailyRate);
+    // console.log("dailyRate: " + dailyRate);
 
     let monthSpan = Math.floor(daysInProject / 22);
-    console.log("monthSpan: " + monthSpan); 
+    // console.log("monthSpan: " + monthSpan); 
 
     let remainingDays = daysInProject - (monthSpan * 22);
-    console.log("remainingDays: " + remainingDays); 
+    // console.log("remainingDays: " + remainingDays); 
 
     let undiscountedMonthlyRate = dailyRate * 22;
-    console.log("undiscountedMonthlyRate: " + undiscountedMonthlyRate);
+    // console.log("undiscountedMonthlyRate: " + undiscountedMonthlyRate);
 
     let discountedMonthlyRate = undiscountedMonthlyRate * (1 - monthlyDiscountRate);
-    console.log("discountedMonthlyRate: " + discountedMonthlyRate); 
+    // console.log("discountedMonthlyRate: " + discountedMonthlyRate); 
 
     let totalCostMonths = monthSpan * discountedMonthlyRate;
-    console.log("totalCostMonths: " + totalCostMonths);
+    // console.log("totalCostMonths: " + totalCostMonths);
 
     let costDays = (remainingDays / 22) * undiscountedMonthlyRate;
-    console.log("costDays: " + costDays); 
+    // console.log("costDays: " + costDays); 
     
     let finalCost = Math.ceil(totalCostMonths + costDays);
-    console.log ("final cost: " + finalCost);
+    // console.log ("final cost: " + finalCost);
+
+    // ^^^ commented out all console.logs meant for testing purposes 
 }
